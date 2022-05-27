@@ -1,0 +1,13 @@
+class Solution:
+    def reverse(self, x: int) -> int:
+
+        p=str(x) 
+        q=str(abs(x))[::-1]
+        if(int(q)>=(2**31)-1 or int(q)<=-(2**31)):
+            return(0)
+        elif(int(p)<0):
+            return(-int(q))
+        
+        else:
+            return(int(q))
+        
