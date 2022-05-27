@@ -1,0 +1,20 @@
+class Solution:
+    def isHappy(self, n: int) -> bool:
+        def next_number(n):
+            res=0
+            while(n>0):
+                p=n%10 
+                res+=p**2 
+                n=n//10
+            return(res)
+        seen=set()
+        while(next_number(n) not in seen):
+            s=next_number(n)
+            if(s==1):
+                return(True)
+            else:
+                seen.add(s)
+                n=s 
+        return(False)
+            
+        
