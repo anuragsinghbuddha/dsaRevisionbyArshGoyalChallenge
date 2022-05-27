@@ -1,0 +1,12 @@
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        if(x<0):
+            return(False)
+        else:
+            res=str(x)
+            mes=str(x)[::-1]
+            if(res==mes):
+                return(True)
+            else:
+                return(False)
+        
