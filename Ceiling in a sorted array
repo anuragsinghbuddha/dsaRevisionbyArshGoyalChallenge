@@ -1,0 +1,30 @@
+"""For example, let the input array be {1, 2, 8, 10, 10, 12, 19}
+For x = 0:    floor doesn't exist in array,  ceil  = 1
+For x = 1:    floor  = 1,  ceil  = 1
+For x = 5:    floor  = 2,  ceil  = 8
+For x = 20:   floor  = 19,  ceil doesn't exist in array"''
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+def ceil_floor(nums,k):
+    if(k in nums):
+        return("ceil is ", k)
+        
+    else:
+        for i in nums:
+             if(i<k):
+                 pass
+             
+                 
+             else:
+                 return ("ceil is ", i)
+    return("ceil doesn't exist in array")
+    
+    
+    
+    
+if __name__ == '__main__':
+    nums=[1, 2, 8, 10, 10, 12, 19]
+    k=10
+    print(ceil_floor(nums,k))
+    
