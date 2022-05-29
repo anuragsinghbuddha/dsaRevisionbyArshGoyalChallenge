@@ -1,0 +1,34 @@
+"""Given a sorted array and a value x, the ceiling of x is the smallest element in array greater than or 
+equal to x, and the floor is the greatest element smaller than or equal to x. Assume than the array is sorted
+in non-decreasing order. Write efficient functions to find floor and ceiling of x. """ 
+
+
+
+
+
+
+
+
+
+def ceil_floor(nums,k):
+    if(k in nums):
+        return("floor is ", k)
+        
+    else:
+        for i in range(len(nums)-1,-1,-1):
+             if(nums[i]>k):
+                 pass
+             
+                 
+             else:
+                 return ("floor is ", nums[i])
+    return("floor doesn't exist in array")
+    
+    
+    
+    
+if __name__ == '__main__':
+    nums=[1, 2, 8, 10, 10, 12, 19]
+    k=9
+    print(ceil_floor(nums,k))
+    
