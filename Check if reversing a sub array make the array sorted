@@ -1,0 +1,42 @@
+"""Input : arr [] = {1, 2, 5, 4, 3}
+Output : Yes
+By reversing the subarray {5, 4, 3}, 
+the array will be sorted.
+
+Input : arr [] = { 1, 2, 4, 5, 3 }
+Output : No"""
+
+def rvrssubarrtosort(nums):
+    p=sorted(nums)
+    if(p==nums):
+        return("Already sorted")
+    low=0 
+    high=len(nums)-1
+    while(low<high):
+        if(nums[low]!=p[low]):
+            break
+            
+        else:
+            low+=1
+    while(low<high):
+        if(nums[high]!=p[high]):
+            break
+        
+        else:
+            high-=1
+            
+    temp=nums[low:high+1]
+    s=temp[::-1]
+    result=nums[:low]+s+nums[high+1:]
+    if(result==p):
+        return(nums[low:high+1])
+    else:
+        return("subarray doesn't exists")
+        
+    
+    
+    
+    
+if __name__ == '__main__':
+    nums=[1,2,6,5,12,7,8,9]
+    print(rvrssubarrtosort(nums))
