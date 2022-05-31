@@ -1,0 +1,27 @@
+"""Input  : arr[] = [1, 100, 101]
+Output : 100
+We can change all its values to 100 with minimum cost,
+|1 - 100| + |100 - 100| + |101 - 100| = 100
+
+Input  : arr[] = [4, 6]
+Output : 2
+We can change all its values to 5 with minimum cost,
+|4 - 5| + |5 - 6| = 2"""
+
+
+
+def MinCostMkeElmtEql(nums):
+    s=len(nums)-1
+    if(s%2==1):
+        p=nums[s//2] 
+    else:
+        p=(nums[s//2]+nums[s-2//2])//2 
+    res=[]
+    for i in range(len(nums)):
+        res.append(abs(p-nums[i]))
+    return(sum(res))
+    
+    
+if __name__ == '__main__':
+    nums=[0,1, 100, 101]
+    print(MinCostMkeElmtEql(nums))
