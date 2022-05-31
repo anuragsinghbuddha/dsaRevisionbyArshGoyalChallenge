@@ -1,0 +1,20 @@
+"""Input: arr[]  = {10, 3, 5, 6, 2}
+Output: prod[]  = {180, 600, 360, 300, 900}
+3 * 5 * 6 * 2 product of other array """ 
+
+#NIVE SOLUTION 
+def prodarr(nums):
+    res=[]
+    for i in range(0,len(nums)):
+        prod=1
+        for j in range(0,len(nums)):
+            if(i==j):
+                pass 
+            else:
+                prod=prod*nums[j] 
+        res.append(prod)
+    return(res)
+        
+7410if __name__ == '__main__':
+    nums=[1, 2, 3, 4, 5]
+    print(prodarr(nums))  
