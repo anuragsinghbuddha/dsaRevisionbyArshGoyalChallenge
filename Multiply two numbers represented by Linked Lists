@@ -1,0 +1,63 @@
+class Node:
+    def __init__(self,val):
+        self.val=val
+        self.next=None 
+class LinkedList:
+    def __init__(self):
+        self.head=None 
+    def display(self):
+        if(self.head==None):
+            print("Linkedlist is Empty")
+        temp=self.head 
+        res1=""
+        while(temp):
+            res1+=str(temp.val)
+            temp=temp.next 
+        t=res1 
+def multiplyTwoLists(first, second):
+   
+    num1 = 0
+    num2 = 0
+ 
+    first_ptr = l1.head
+    second_ptr = l2.head
+     
+    while first_ptr != None or second_ptr != None:
+        if first_ptr != None:
+            num1 = (num1 * 10) + first_ptr.val
+            first_ptr = first_ptr.next
+     
+        if second_ptr != None:
+            num2 = (num2 * 10) + second_ptr.val
+            second_ptr = second_ptr.next
+     
+    return num1 * num2
+        
+        
+if __name__=="__main__":
+    l1=LinkedList()
+    a=Node(1)
+    l1.head=a 
+    b=Node(2)
+    a.next=b 
+    c=Node(3)
+    b.next=c 
+    d=Node(4)
+    c.next=d
+    #l1.display()
+    l2=LinkedList()
+    a=Node(1)
+    l2.head=a 
+    b=Node(2)
+    a.next=b 
+    c=Node(3)
+    b.next=c 
+    d=Node(4)
+    c.next=d
+    l2.display()
+    result = multiplyTwoLists(l1, l2)
+    print("Result is: ", result)
+    
+            
+            
+    
