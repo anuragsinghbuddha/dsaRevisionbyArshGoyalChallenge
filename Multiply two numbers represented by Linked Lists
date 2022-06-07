@@ -1,5 +1,64 @@
 class Node:
     def __init__(self,val):
+        self.val=val 
+        self.next=None 
+class LinkedList:
+    def __init__(self):
+        self.head=None 
+    def push(self,data):
+        new_node=Node(data)
+        new_node.next=self.head 
+        self.head=new_node 
+    def display(self):
+        if(self.head==None):
+            print("Linkedlist is Empty")
+        else:
+            temp=self.head 
+            while(temp):
+                print(temp.val,end="-->")
+                temp=temp.next 
+def multiply(list1,list2):
+    temp1=0 
+    temp2=0 
+    res=list1.head 
+    mes=list2.head
+    while(res or mes):
+        if(res):
+            temp1=temp1*10+res.val
+            res=res.next 
+        if(mes):
+            temp2=temp2*10+mes.val
+            mes=mes.next
+    return(temp1*temp2)
+    
+            
+if __name__ == '__main__':
+    list1=LinkedList()
+    list2=LinkedList()
+    list1.push(10)
+    list1.push(30)
+    list2.push(20)
+    list2.push(30)
+    list1.display()
+    print()
+    list2.display()
+    print()
+    print(multiply(list1,list2))
+        
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+class Node:
+    def __init__(self,val):
         self.val=val
         self.next=None 
 class LinkedList:
