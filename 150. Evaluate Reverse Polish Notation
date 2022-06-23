@@ -1,0 +1,32 @@
+Input: tokens = ["2","1","+","3","*"]
+Output: 9
+Explanation: ((2 + 1) * 3) = 9
+
+.............................................................................................................................................................. 
+
+class Solution:
+    def evalRPN(self, tokens: List[str]) -> int:
+        if(len(tokens)==1):
+            return int(tokens[0])
+        stack=[]
+        operators=["+","-","*","/"]
+        for i in tokens:
+            if(i not in operators):
+                stack.append(i)
+            else:
+                p=stack.pop()
+                q=stack.pop()
+                if(i=="+"):
+                    r=int(p)+int(q)
+                    stack.append(r)
+                elif(i=="-"):
+                    r=int(q)-int(p)
+                    stack.append(r)
+                elif(i=="*"):
+                    r=int(p)*int(q)
+                    stack.append(r)
+                elif(i=="/"):
+                    r=int(float(q)/float(p))
+                    stack.append(r)
+        return(r)
+                
